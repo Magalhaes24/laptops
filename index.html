@@ -14,94 +14,28 @@
    --text-muted:#475569;
    --shadow:0 3px 8px rgba(0,0,0,.08);
  }
-
  *{box-sizing:border-box;margin:0;padding:0;}
- html,body{height:100%;}
- body{
-   font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-   background:linear-gradient(135deg,#f8fafc 0%,#eef2f7 100%);
-   color:var(--text);
-   padding:2.5rem 1rem;
- }
- h1{
-   font-size:clamp(1.6rem,3vw,2.2rem);
-   text-align:center;
-   font-weight:600;
-   margin-bottom:2rem;
- }
- /* grid */
- .grid{
-   max-width:1200px;
-   margin:auto;
-   display:grid;
-   grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-   gap:1.8rem;
- }
- /* card */
- .card{
-   background:var(--surface);
-   border-radius:var(--radius);
-   box-shadow:var(--shadow);
-   padding:1rem;
-   display:flex;
-   flex-direction:column;
-   transition:transform .15s ease,box-shadow .15s ease;
- }
+ body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(135deg,#f8fafc 0%,#eef2f7 100%);color:var(--text);padding:2.5rem 1rem;}
+ h1{font-size:clamp(1.6rem,3vw,2.2rem);text-align:center;font-weight:600;margin-bottom:2rem;}
+ .grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.8rem;}
+ .card{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);padding:1rem;display:flex;flex-direction:column;transition:transform .15s ease,box-shadow .15s ease;}
  .card:hover{transform:translateY(-4px);box-shadow:0 6px 14px rgba(0,0,0,.12);} 
- .thumb{
-   width:100%;
-   aspect-ratio:16/9;
-   object-fit:contain;
-   background:var(--surface-muted);
-   border-radius:calc(var(--radius) - 2px);
- }
- .title{font-size:1rem;font-weight:600;line-height:1.35;margin:.75rem 0 .4rem;color:var(--text);}
- .specs{font-size:.82rem;line-height:1.45;color:var(--text-muted);}
- .specs span{display:block;margin:.1rem 0;}
- .specs strong{color:var(--text);} 
- .actions{margin-top:auto;display:flex;justify-content:flex-end;}
- .btn{
-   display:inline-block;
-   padding:.45rem .9rem;
-   border-radius:8px;
-   background:var(--primary);
-   color:#fff;
-   font-size:.84rem;
-   font-weight:600;
-   text-decoration:none;
-   transition:background .2s;
- }
+ .thumb{width:100%;aspect-ratio:16/9;object-fit:contain;background:var(--surface-muted);border-radius:calc(var(--radius) - 2px);} 
+ .title{font-size:1rem;font-weight:600;line-height:1.35;margin:.75rem 0 .4rem;color:var(--text);} 
+ .specs{font-size:.82rem;line-height:1.45;color:var(--text-muted);} 
+ .specs span{display:block;margin:.1rem 0;} .specs strong{color:var(--text);} 
+ .actions{margin-top:auto;display:flex;justify-content:flex-end;} 
+ .btn{display:inline-block;padding:.45rem .9rem;border-radius:8px;background:var(--primary);color:#fff;font-size:.84rem;font-weight:600;text-decoration:none;transition:background .2s;} 
  .btn:hover{background:var(--primary-dark);} 
-
- /* modal */
- .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:10;}
- .modal.show{opacity:1;pointer-events:auto;}
- .modal-content{
-   background:var(--surface);
-   color:var(--text);
-   border-radius:var(--radius);
-   width:90%;
-   max-width:340px;
-   padding:1.5rem 1.25rem;
-   box-shadow:0 8px 20px rgba(0,0,0,.15);
-   animation:pop .25s ease;
- }
- @keyframes pop{from{transform:scale(.9);}to{transform:scale(1);}}
- .modal-content h3{font-size:1rem;font-weight:600;margin-bottom:.8rem;text-align:center;}
- .modal-content pre{font-family:inherit;font-size:.85rem;white-space:pre-wrap;line-height:1.4;}
- .close-btn{
-   margin-top:1rem;
-   background:var(--surface-muted);
-   border:none;
-   padding:.4rem .9rem;
-   border-radius:8px;
-   font-weight:600;
-   cursor:pointer;
-   transition:background .2s;
- }
- .close-btn:hover{background:#dbe1e9;}
-
- a{color:var(--primary);} a:hover{text-decoration:underline;}
+ .modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s;z-index:10;} 
+ .modal.show{opacity:1;pointer-events:auto;} 
+ .modal-content{background:var(--surface);color:var(--text);border-radius:var(--radius);width:90%;max-width:340px;padding:1.5rem 1.25rem;box-shadow:0 8px 20px rgba(0,0,0,.15);animation:pop .25s ease;} 
+ @keyframes pop{from{transform:scale(.9);}to{transform:scale(1);} } 
+ .modal-content h3{font-size:1rem;font-weight:600;margin-bottom:.8rem;text-align:center;} 
+ .modal-content pre{font-family:inherit;font-size:.85rem;white-space:pre-wrap;line-height:1.4;} 
+ .close-btn{margin-top:1rem;background:var(--surface-muted);border:none;padding:.4rem .9rem;border-radius:8px;font-weight:600;cursor:pointer;transition:background .2s;} 
+ .close-btn:hover{background:#dbe1e9;} 
+ a{color:var(--primary);} a:hover{text-decoration:underline;} 
 </style>
 </head>
 <body>
@@ -119,7 +53,56 @@
 
 <script>
 const placeholder="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAHGlET1QAAAACAAAAAAAAAAgAAAAoAAAAIAAABw==";
-const laptops=[{"name":"LG Gram 14 (2024) – Ultra 7 155H","img":"https://m.media-amazon.com/images/I/71u7UQ5RyrL._AC_SX679_.jpg","screen":"14″ 1920×1200 IPS","cpu":"Intel Core Ultra 7 155H","ram":"16 GB LPDDR5X","storage":"512 GB NVMe SSD","weight":"1.12 kg","battery":"72 Wh (battery details)","batteryDetails":"Light office/web: ~13 h\n1080p video: ~14 h\nHeavy multitasking: 6–8 h\nSustained load: 2–3 h","link":"https://www.amazon.it/dp/B0CWHFC4MG"},{"name":"HP 15‑fc0027np","img":"https://www.worten.pt/i/4193adffb9baa053eec99d245d3b6909ec0a38d3","screen":"15.6″ 1920×1080 IPS","cpu":"AMD Ryzen 7 7730U","ram":"16 GB DDR4","storage":"1 TB NVMe SSD","weight":"1.6 kg","battery":"41 Wh (battery details)","batteryDetails":"Light office/web: ~9 h\n1080p video: ~10 h\nHeavy multitasking: 5–6 h\nSustained load: ~2 h","link":"https://www.worten.pt/produtos/portatil-hp-15-fc0027np-15-6-amd-ryzen-7-7730u-ram-16-gb-1-tb-ssd-amd-radeon-graphics-8193545"},{"name":"HP 15‑fc0012np","img":"https://pcdiga-prod.eu.saleor.cloud/media/thumbnails/products/1_p070873_47edb41a_thumbnail_4096.jpg","screen":"15.6″ 1920×1080 IPS","cpu":"AMD Ryzen 7 7730U","ram":"16 GB DDR4","storage":"1 TB NVMe SSD","weight":"1.6 kg","battery":"41 Wh (battery details)","batteryDetails":"Light office/web: ~9 h\n1080p video: ~10 h\nHeavy multitasking: 5–6 h\nSustained load: ~2 h","link":"https://www.pcdiga.com/computadores-e-software/computadores-laptop/computadores-portateis/portatil-hp-laptop-15-fc0012np-15-6-prateado-natural-86v51ea-ab9-197497623741"},{"name":"LG Gram 14 (Refurb) – Ultra 7 155H","img":"https://pcdiga-prod.eu.saleor.cloud/media/thumbnails/products/1_8806096011461_1cf68fc0_thumbnail_4096.jpg","screen":"14″ 1920×1200 IPS","cpu":"Intel Core Ultra 7 155H","ram":"16 GB LPDDR5X","storage":"512 GB NVMe SSD","weight":"1.12 kg","battery":"72 Wh (battery details)","batteryDetails":"Light office/web: ~13 h\n1080p video: ~14 h\nHeavy multitasking: 6–8 h\nSustained load: 2–3 h","link":"https://www.pcdiga.com/computadores-e-software/computadores-laptop/computadores-portateis/portatil-lg-gram-14z90s-14-wuxga-ultra-7-155h-arc-graphics-16gb-ram-ssd-512gb-w11-home-recondicionado-14z90s-g-aa75p-8806096011461-refurbished"}];
+const laptops=[
+ {
+  name:"LG Gram 14 (2024) – Ultra 7 155H",
+  img:"https://m.media-amazon.com/images/I/71u7UQ5RyrL._AC_SX679_.jpg",
+  screen:"14″ 1920×1200 IPS",
+  cpu:"Intel Core Ultra 7 155H",
+  ram:"16 GB LPDDR5X",
+  storage:"512 GB NVMe SSD",
+  weight:"1.12 kg",
+  battery:"72 Wh (battery details)",
+  batteryDetails:`Light office/web: ~13 h\n1080p video: ~14 h\nHeavy multitasking: 6–8 h\nSustained load: 2–3 h`,
+  link:"https://www.amazon.it/dp/B0CWHFC4MG"
+ },
+ {
+  name:"HP 15‑fc0027np",
+  img:"https://www.worten.pt/i/4193adffb9baa053eec99d245d3b6909ec0a38d3",
+  screen:"15.6″ 1920×1080 IPS",
+  cpu:"AMD Ryzen 7 7730U",
+  ram:"16 GB DDR4",
+  storage:"1 TB NVMe SSD",
+  weight:"1.6 kg",
+  battery:"41 Wh (battery details)",
+  batteryDetails:`Light office/web: ~9 h\n1080p video: ~10 h\nHeavy multitasking: 5–6 h\nSustained load: ~2 h`,
+  link:"https://www.worten.pt/produtos/portatil-hp-15-fc0027np-15-6-amd-ryzen-7-7730u-ram-16-gb-1-tb-ssd-amd-radeon-graphics-8193545"
+ },
+ {
+  name:"HP 15‑fc0012np",
+  img:"https://pcdiga-prod.eu.saleor.cloud/media/thumbnails/products/1_p070873_47edb41a_thumbnail_4096.jpg",
+  screen:"15.6″ 1920×1080 IPS",
+  cpu:"AMD Ryzen 7 7730U",
+  ram:"16 GB DDR4",
+  storage:"1 TB NVMe SSD",
+  weight:"1.6 kg",
+  battery:"41 Wh (battery details)",
+  batteryDetails:`Light office/web: ~9 h\n1080p video: ~10 h\nHeavy multitasking: 5–6 h\nSustained load: ~2 h`,
+  link:"https://www.pcdiga.com/computadores-e-software/computadores-laptop/computadores-portateis/portatil-hp-laptop-15-fc0012np-15-6-prateado-natural-86v51ea-ab9-197497623741"
+ },
+ {
+  name:"Acer Swift Go 14 (SFG14‑73) – Ultra 7 155H",
+  img:"https://m.media-amazon.com/images/I/81iITyn50IL._AC_SX679_.jpg",
+  screen:"14″ 2880×1800 OLED 90 Hz",
+  cpu:"Intel Core Ultra 7 155H",
+  ram:"16 GB LPDDR5X",
+  storage:"1 TB NVMe SSD",
+  weight:"1.32 kg",
+  battery:"65 Wh (battery details)",
+  batteryDetails:`Light office/web: ~11 h\n1080p video: ~12 h\nHeavy multitasking: 6–7 h\nSustained load: ~2 h`,
+  link:"https://www.amazon.es/Acer-Swift-SFG14-73-Ordenador-Processor/dp/B0B8YYCL67"
+ }
+];
 const grid=document.getElementById('grid');
 
 laptops.forEach((lap,idx)=>{
@@ -143,8 +126,7 @@ const modal=document.getElementById('batteryModal');
 const title=document.getElementById('modalTitle');
 const body=document.getElementById('modalBody');
 
-grid.addEventListener('click',e=>{
- if(e.target.matches('.battery-link')){e.preventDefault();showBattery(e.target.dataset.idx);} });
+grid.addEventListener('click',e=>{if(e.target.matches('.battery-link')){e.preventDefault();showBattery(e.target.dataset.idx);} });
 
 document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('show'));
 modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show');});
